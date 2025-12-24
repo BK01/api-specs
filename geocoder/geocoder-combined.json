@@ -510,6 +510,21 @@
             }
           },
           {
+            "name": "tagCondition",
+            "in": "query",
+            "description": "By selecting the 'or' condition, occupants returned will contain one or more of the tags in their keyword list. By selecting the 'and' condition, all tags must be present in the occupant keyword list",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "or",
+                "and"
+              ],
+              "default": "or"
+            },
+            "example": "or"
+          },
+          {
             "name": "locationDescriptor",
             "in": "query",
             "description": "Describes the nature of the address location. See <a href=https://github.com/bcgov/ols-geocoder/blob/gh-pages/glossary.md#locationDescriptor target=\"_blank\">locationDescriptor</a>",
