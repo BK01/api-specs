@@ -512,7 +512,7 @@
           {
             "name": "tagCondition",
             "in": "query",
-            "description": "The 'or' condition will return occupants having one or more of the tags in their keyword list. The 'and' condition will return occupants having all of the tags in their keyword list. **Only available and in the DLV environment**",
+            "description": "The 'or' condition will return occupants having one or more of the tags in their keyword list. The 'and' condition will return occupants having all of the tags in their keyword list. <br>**Only available in the DLV environment**",
             "required": false,
             "schema": {
               "type": "string",
