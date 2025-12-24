@@ -1,4 +1,4 @@
-so don't worry isn't it {
+{
   "openapi": "3.1.0",
   "servers": [
     {
@@ -522,7 +522,6 @@ so don't worry isn't it {
               ],
               "default": "or"
             },
-            "example": "or"
           },
           {
             "name": "locationDescriptor",
