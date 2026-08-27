@@ -24,7 +24,7 @@ This guide is aimed at developers and web masters that would like to incorporate
 [Intersection Address Representation](#intersectionaddressrepresentation)<br>
 [About faults](#aboutfaults)<br>
 [Implementing address autocompletion in your application](#implementingautocomplete)<br>
-[API reponse error code](#APIReponseErrorCodes)<br>
+[API response error code](#APIResponseErrorCodes)<br>
 
 
 <a name=intro></a>
@@ -243,7 +243,7 @@ Using the [autoComplete](https://github.com/bcgov/ols-geocoder/blob/gh-pages/glo
 
 A user starts entering the characters of an address. After three or so characters, the application should issue a get request on the addresses resource with autoComplete set to true every time a user enters an additional character. This tells the geocoder that addressString contains a partial address and to find the best N address prefix matches for display in a pick list below the address text box.
 
-If the user clicks on the search icon or presses the Enter key, the application should issue a get request on the addresses resource with autoComplete set to False. This tells the geocoder to use addressString as entered when trying to find the best N matches.
+If the user clicks on the search icon or presses the Enter key, the application should issue a get request on the addresses resource with autoComplete set to false. This tells the geocoder to use addressString as entered when trying to find the best N matches.
 
 You can also use the autoComplete and [exactSpelling](https://github.com/bcgov/ols-geocoder/blob/gh-pages/glossary.md#exactSpelling) parameters in the same request. If exactSpelling is set to true (default is false), autoComplete suggestions will be limited to addresses beginning with the provided partial address. 
 
@@ -252,7 +252,7 @@ In addition to [exactSpelling](https://github.com/bcgov/ols-geocoder/blob/gh-pag
 If you are using jQuery in your javascript app, check out our javascript code for autocompletion [here](https://github.com/bcgov/ols-devkit/tree/gh-pages/widget). To see the code in action, visit [here](https://bcgov.github.io/ols-devkit/examples/address_autocomplete.html)
 
 <br><br>
-<a name=APIReponseErrorCodes></a>
+<a name=APIResponseErrorCodes></a>
 ## API reponse error codes
 ### KONG API gateway errors
 We use Kong API gateway to manage Geocoder API calls. Below is a list of gateway errors. You can skip this section if you installed your own Geocoder.
@@ -260,13 +260,13 @@ We use Kong API gateway to manage Geocoder API calls. Below is a list of gateway
 |Response Code|Error Message|Error Description
 |--|--|--|
 |404|This page is not found|The path is not defined
-|401|No API key found in reques|The API endpoints requires an API key
+|401|No API key found in request|The API endpoints requires an API key
 |401|Invalid authentication credentials|The provided API key is not found
 |403|You cannot consume this service|The provided API key is invalid, unapproved or expired.
 |429|API rate limit exceeded|Too many requests per minute
 
 ### Geocoder specific errors 
-Geocoder can return a number of error response.
+Geocoder can return a number of error responses.
 |Response Code|Error Message|Error Description
 |--|--|--|
 |400|Invalid parameter:[details]|The provided parameter is incorrect. Please refer to the details
